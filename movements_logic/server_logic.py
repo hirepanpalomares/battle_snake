@@ -57,16 +57,20 @@ def avoid_my_body(my_head: Dict[str, int], my_body: List[dict], possible_moves: 
 def avoid_walls(my_head: Dict[str, int], width: int, height: int, possible_moves: List[str]) -> List[str]:
   for direction in possible_moves:
     if direction == "up":
-      if my_head["y"] + 1 == height:
+      new_y = my_head["y"] + 1
+      if new_y == height:
         possible_moves.remove("up")
     elif direction == "down":
-      if my_head["y"] - 1 == -1:
+      new_y = my_head["y"] - 1
+      if new_y == -1 or new_y < 0:
         possible_moves.remove("down")
     elif direction == "left":
-      if my_head["x"] - 1 == -1:
+      new_x = my_head["x"] - 1
+      if new_x == -1 or new_x < 0:
         possible_moves.remove("left")
     elif direction == "right":
-      if my_head["x"] + 1 == width:
+      new_x = my_head["x"] + 1
+      if new_x == width:
         possible_moves.remove("right")
 
   return possible_moves
