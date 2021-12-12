@@ -68,7 +68,7 @@ def avoid_walls(my_head: Dict[str, int], width: int, height: int, possible_moves
     elif direction == "right":
       if my_head["x"] + 1 == width:
         possible_moves.remove("right")
-        
+
   return possible_moves
 
 def avoid_snakes(id, snakes, my_head, possible_moves):
@@ -124,6 +124,6 @@ def choose_move(data: dict) -> str:
 
     # TODO: Explore new strategies for picking a move that are better than random
 
-    #print(f"{data['game']['id']} MOVE {data['turn']}: {move} picked from all valid options in {possible_moves}")
+    print(f"{data['game']['id']} MOVE {data['turn']}: {move} picked from all valid options in {possible_moves}")
 
     return move
