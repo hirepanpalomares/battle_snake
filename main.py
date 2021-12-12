@@ -4,7 +4,7 @@ import os
 from flask import Flask
 from flask import request
 
-import server_logic
+import movements_logic.server_logic as server_logic
 
 
 app = Flask(__name__)
